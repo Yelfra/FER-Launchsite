@@ -1,0 +1,25 @@
+\babel@toc {croatian}{}\relax 
+\contentsline {chapter}{\numberline {1}Uvod}{1}{}%
+\contentsline {chapter}{\numberline {2}Osnovni koncepti DSP-a}{2}{}%
+\contentsline {section}{\numberline {2.1}Kvantizacija}{2}{}%
+\contentsline {section}{\numberline {2.2}FFT}{3}{}%
+\contentsline {subsection}{\numberline {2.2.1}Način rada FFT-a}{3}{}%
+\contentsline {section}{\numberline {2.3}Konvolucija}{3}{}%
+\contentsline {chapter}{\numberline {3}Audio efekti}{5}{}%
+\contentsline {section}{\numberline {3.1}Delay}{5}{}%
+\contentsline {section}{\numberline {3.2}Reverb}{5}{}%
+\contentsline {subsection}{\numberline {3.2.1}Decay}{6}{}%
+\contentsline {section}{\numberline {3.3}Chorus}{6}{}%
+\contentsline {section}{\numberline {3.4}Vizualizacija}{8}{}%
+\contentsline {subsection}{\numberline {3.4.1}Delay}{8}{}%
+\contentsline {subsection}{\numberline {3.4.2}Reverb}{9}{}%
+\contentsline {subsection}{\numberline {3.4.3}Chorus}{10}{}%
+\contentsline {chapter}{\numberline {4}Implementacija u praksi}{11}{}%
+\contentsline {section}{\numberline {4.1}Zašto Python?}{11}{}%
+\contentsline {section}{\numberline {4.2}Zašto ne Python?}{11}{}%
+\contentsline {section}{\numberline {4.3}Kod}{12}{}%
+\contentsline {subsection}{\numberline {4.3.1}Delay}{12}{}%
+\contentsline {subsection}{\numberline {4.3.2}Reverb}{13}{}%
+\contentsline {subsection}{\numberline {4.3.3}Chorus}{14}{}%
+\contentsline {chapter}{\numberline {5}Zaključak}{15}{}%
+\contentsline {chapter}{\numberline {6}Literatura}{16}{}%

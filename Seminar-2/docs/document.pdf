@@ -1,0 +1,25 @@
+\documentclass[times, utf8, zavrsni, numeric]{fer}
+\usepackage{booktabs}
+\usepackage{pdfpages}
+\usepackage{caption}
+\graphicspath{{./prikazi/}}
+\bibliographystyle{unsrt}
+\usepackage[superscript, biblabel]{cite}
+\usepackage{cprotect}
+
+\begin{document}
+
+\title{ADD TITLE}
+
+\author{Fran Jelavić}
+
+\maketitle
+
+\tableofcontents
+
+\chapter{Uvod}
+
+
+
+
+\end{document}

@@ -1,0 +1,75 @@
+\begin{thebibliography}{10}
+
+\bibitem{dueck2005digital}
+R.K. Dueck.
+\newblock {\em Digital Design with CPLD Applications and VHDL}.
+\newblock Thomson/Delmar Learning, 2005.
+
+\bibitem{tsividis2004digital}
+Yannis Tsividis.
+\newblock Digital signal processing in continuous time: a possibility for
+  avoiding aliasing and reducing quantization error.
+\newblock In {\em 2004 IEEE International Conference on Acoustics, Speech, and
+  Signal Processing}, volume~2, pages ii--589. IEEE, 2004.
+
+\bibitem{gersho2012vector}
+Allen Gersho and Robert~M Gray.
+\newblock {\em Vector quantization and signal compression}, volume 159.
+\newblock Springer Science \& Business Media, 2012.
+
+\bibitem{heideman1985gauss}
+Michael~T Heideman, Don~H Johnson, and C~Sidney Burrus.
+\newblock Gauss and the history of the fast fourier transform.
+\newblock {\em Archive for history of exact sciences}, pages 265--277, 1985.
+
+\bibitem{lourde2009digital}
+Mary Lourde and Anjali~Kuppayil Saji.
+\newblock A digital guitar tuner.
+\newblock {\em arXiv e-prints}, pages arXiv--0912, 2009.
+
+\bibitem{focusrite_2022}
+Sample rate, bit depth and buffer size explained – focusrite audio ..., Jan
+  2022.
+
+\bibitem{gustine_2021}
+Jeremy Gustine.
+\newblock Guitar tuner - pitch detection for dummies, Jul 2021.
+
+\bibitem{krishna2017digital}
+Hari Krishna.
+\newblock {\em Digital signal processing algorithms: number theory,
+  convolution, fast Fourier transforms, and applications}.
+\newblock Routledge, 2017.
+
+\bibitem{zolzer2022digital}
+Udo Z{\"o}lzer.
+\newblock {\em Digital audio signal processing}.
+\newblock John Wiley \& Sons, 2022.
+
+\bibitem{dattorro1997effect}
+Jon Dattorro.
+\newblock Effect design, part 2: Delay line modulation and chorus.
+\newblock {\em Journal of the Audio engineering Society}, 45(10):764--788,
+  1997.
+
+\bibitem{lloyd1937music}
+Llewelyn~Southworth Lloyd.
+\newblock {\em Music and sound}.
+\newblock London; Toronto: Oxford University Press, 1937.
+
+\bibitem{gardner2002reverberation}
+William~G Gardner.
+\newblock Reverberation algorithms.
+\newblock {\em Applications of digital signal processing to audio and
+  acoustics}, pages 85--131, 2002.
+
+\bibitem{nativeinstrumentsReverbEssential}
+Native Instruments.
+\newblock How to use reverb: the essential reverb guide for music producers |
+  native instruments blog --- blog.native-instruments.com.
+\newblock
+  \url{https://blog.native-instruments.com/how-to-use-reverb/#common-reverb-parameters},
+  17-Jan-2023.
+\newblock [01-May-2023].
+
+\end{thebibliography}

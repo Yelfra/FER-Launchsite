@@ -1,0 +1,59 @@
+import numpy as np
+import scipy.signal as signal
+import soundfile as sf
+import matplotlib.pyplot as plt
+
+def chorus(input_signal, fs, depth, rate, delay_time):
+    # Create an array of zeros to hold the output signal
+    output_signal = np.zeros_like(input_signal)
+
+    # Calculate delay samples using delay_time
+    delay_samples = int(fs * delay_time)
+    # Set up LFO
+    lfo_period = int(fs / rate)
+    lfo = depth * np.sin(2 * np.pi * np.arange(len(input_signal)) / lfo_period)
+
+    # Apply the chorus effect using LFO and delay
+    for i in range(len(input_signal)):
+        # Sum input with delayed and modulated signal for current sample
+        if i >= delay_samples:
+            output_signal[i] = input_signal[i] + lfo[i] * input_signal[i - delay_samples] + (1 - depth) * output_signal[i - delay_samples]
+        else:
+            output_signal[i] = input_signal[i]
+
+    # Normalize the output signal to avoid clipping
+    output_signal /= np.max(np.abs(output_signal))
+
+    return output_signal
+
+# Load input signal from file
+input_signal, fs = sf.read('audio_rising-sun.ogg')
+
+# Set reverb parameters
+delay_time = 0.05 # seconds
+decay_time = 1 # seconds
+diffusion = 4
+pre_delay_time = 0.02 # seconds
+feedback = 0.5
+depth = 1
+rate = 2
+output_signal = chorus(input_signal, fs, depth, rate, delay_time)
+
+# Pad input signal with zeros to match output signal length
+input_signal = np.pad(input_signal, (0, len(output_signal) - len(input_signal)), 'constant')
+
+# Create time axis in seconds
+time_axis = np.arange(len(input_signal)) / fs
+
+# Plot input and output signals
+fig, graph = plt.subplots()
+graph.plot(time_axis, output_signal, label='Output')
+graph.plot(time_axis, input_signal, label='Input')
+graph.legend()
+graph.set_xlabel('Time (s)')
+graph.set_ylabel('Amplitude')
+graph.set_title('Chorus Effect')
+plt.show()
+
+# Save output signal to file
+sf.write('output_signal.wav', output_signal, fs)

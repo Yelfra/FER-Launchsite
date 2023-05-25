@@ -1,0 +1,65 @@
+import numpy as np
+import scipy.signal as signal
+import soundfile as sf
+import matplotlib.pyplot as plt
+
+
+def reverb(input_signal, fs, delay_time, decay, diffusion, pre_delay):
+    # Calculate delay time and pre-delay time in samples
+    delay_samples = int(delay_time * fs)
+    pre_delay_samples = int(pre_delay * fs)
+
+    # Create delay filter with exponential decay
+    delay_filter = np.zeros(delay_samples)
+    delay_filter[0] = 1
+    delay_filter[-1] = -decay
+
+    # Add diffusion to delay filter
+    for i in range(1, diffusion + 1):
+        diff_delay = int(i * delay_time * fs)
+        diff_decay = decay / i
+        diff_filter = np.zeros(delay_samples)
+        diff_filter[0] = 1
+        diff_filter[-1] = -diff_decay
+        delay_filter += np.pad(diff_filter, (diff_delay, 0), 'constant')[:delay_samples]
+
+    # Add pre-delay to delay filter
+    delay_filter = np.concatenate((np.zeros(pre_delay_samples), delay_filter))
+
+    # Pad input signal with zeros to match output signal length
+    delay_filter = np.pad(delay_filter, (0, len(input_signal) - len(delay_filter)), 'constant')
+
+    # Convolution of input signal with delay filter
+    output_signal = signal.convolve(input_signal, delay_filter, mode='full')
+
+    return output_signal
+
+# Load input signal from file
+input_signal, fs = sf.read('audio_ping2.ogg')
+
+# Set reverb parameters
+delay_time = 0.05 # seconds
+decay = 1
+diffusion = 4
+pre_delay_time = 0.02 # seconds
+feedback = 0.5
+output_signal = reverb(input_signal, fs, delay_time, decay, diffusion, pre_delay_time)
+
+# Pad input signal with zeros to match output signal length
+input_signal = np.pad(input_signal, (0, len(output_signal) - len(input_signal)), 'constant')
+
+# Create time axis in seconds
+time_axis = np.arange(len(input_signal)) / fs
+
+# Plot input and output signals
+fig, graph = plt.subplots()
+graph.plot(time_axis, output_signal, label='Output')
+graph.plot(time_axis, input_signal, label='Input')
+graph.legend()
+graph.set_xlabel('Time (s)')
+graph.set_ylabel('Amplitude')
+graph.set_title('Reverb Effect')
+plt.show()
+
+# Save output signal to file
+sf.write('output_signal.wav', output_signal, fs)
